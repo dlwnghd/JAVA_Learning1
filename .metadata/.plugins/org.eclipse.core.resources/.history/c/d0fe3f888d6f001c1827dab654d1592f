@@ -1,0 +1,13 @@
+package day07;
+
+public class WhileTest {
+	public static void main(String[] args) {
+		int i = 0;
+		while (i < 3) {
+			System.out.println("while문 안쪽 문장");
+			i++;
+		}
+		System.out.println("while문 바깥 문장");
+	}
+
+}

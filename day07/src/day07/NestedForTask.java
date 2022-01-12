@@ -1,0 +1,95 @@
+package day07;
+
+public class NestedForTask {
+	public static void main(String[] args) {
+	      /*
+	       *  *****
+	       *  *****
+	       *  *****
+	       *  *****
+	       *  *****
+	       * 
+	       * */
+			System.out.println("-------------");
+			for (int j = 0; j < 5; j++) { // j 는 0; j가 5미만인 동안 반복; j++;
+				for (int i = 0; i < 5; i++) { // i는 0; i는 5미만인 동안 반복; i++;
+					System.out.print("*"); // "*"출력
+				}
+				System.out.println(); //
+			}
+			
+	      /*
+	       * *
+	       * **
+	       * ***
+	       * ****
+	       * *****
+	       * 
+	       * */
+			
+//			전체적으로 보면 
+//			1. i가 5미만이면 2번으로 후에 다시 시작시 i++ 아니면 for문 탈출
+//			2. j가 i이하라면 3번으로 후에 다시 시작시 j++ 아니면 for문 탈출
+//			3. "*"을 출력 후 2번으로
+//			4. "엔터" 입력 후 1번으로
+			
+			for (int i = 0; i < 5; i++) { // i는 0; i가 5미만동안; i = i+1; (i => 0,1,2,3,4)
+				for (int j = 0; j <= i; j++) { // j는 0; j가 i이하인 동안; j = j + 1; (j => 0,1,2,3,4 지만 i보다 클 수 없음)
+					System.out.print("*"); // "*"출력
+				}
+				System.out.println(); // 다음 줄로 이동
+			}
+			
+	      /*
+	       *     *
+	       *    **
+	       *   ***
+	       *  **** 
+	       * *****
+	       * 
+	       * */
+			
+			// 이중 for문
+//			for(int i =0; i <5; i++) {		// i는 5; i가 0초과동안 반복; i = i-1;
+//				for(int j = 0; j < 4-i; j++) {	// j는 0; j가 (i-1)미만동안 반복; j = j + 1;
+//					System.out.print(" ");	// "*"출력
+//				}
+//				for(int j = 0; j < i+1; j++) {		// j는 0; j가 i+1미만동안 반복; j = j + 1;
+//					System.out.print("*");		// "*" 출력
+//				}
+//				System.out.println();	// Enter 줄 바꿈
+//			}
+			
+			
+			// j
+			/*	01234
+		       *     *		<--- i ==0		: j 0123 " ", j 4 "*"
+		       *    **	<--- i ==1		: j 012 " ", j 34 "*"
+		       *   ***	<--- i ==2		: j 01 " ", j 234 "*"
+		       *  **** 	<--- i ==3		: j 0 " ", j 1234 "*"
+		       * *****	<--- i ==4		: j  " ", j 01234 "*"
+		       * 
+		       * */
+			
+			
+			for (int i = 0; i < 5; i++) {
+				for (int j = 0; j < 5; j++) {
+					if (j < 4 - i) {
+						System.out.print(" ");
+					} else {
+						System.out.print("*");
+					}
+				}
+				System.out.println();
+			}
+	      
+	      // 구구단 2단부터 9단까지 출력하기
+			for (int dan = 2; dan <= 9; dan++) {
+				System.out.println("----" + dan + "단----");
+				for (int i = 0; i < 9; i++) {
+					System.out.println(dan + " * " + (i + 1) + dan * (i + 1));
+				}
+			}
+	      
+	}
+}

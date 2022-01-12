@@ -1,0 +1,49 @@
+package day07;
+
+public class NestedForTask {
+	public static void main(String[] args) {
+	      /*
+	       *  *****
+	       *  *****
+	       *  *****
+	       *  *****
+	       *  *****
+	       * 
+	       * */
+			System.out.println("-------------");
+			for (int i = 0; i < 5; i++) { // j 는 0; j가 5미만인 동안 반복; j++;
+				for (int j = 0; j < 5; j++) { // i는 0; i는 5미만인 동안 반복; i++;
+					System.out.print("*"); // "*"출력
+				}
+				System.out.println(); //
+			}
+			
+	      /*
+	       * *
+	       * **
+	       * ***
+	       * ****
+	       * *****
+	       * 
+	       * */
+	      
+			for (int i = 0; i < 5; i++) { // i는 0; i가 5미만동안; i = i+1; (i => 0,1,2,3,4)
+				for (int j = 0; j <= i; j++) { // j는 0; j가 i이하인 동안; j = j + 1; (j => 0,1,2,3,4 지만 i보다 클 수 없음)
+					System.out.print("*"); // "*"출력
+				}
+				System.out.println(); // 다음 줄로 이동
+			}
+			
+	      /*
+	       *     *
+	       *    **
+	       *   ***
+	       *  **** 
+	       * *****
+	       * 
+	       * */
+	      
+	      // 구구단 2단부터 9단까지 출력하기
+	      
+	}
+}

@@ -1,0 +1,15 @@
+package homework;
+
+public class JAVA_01_05 {
+	public static void main(String[] args) {
+		// 사용자에게 월을 입력 받아, 해당 월의 마지막 날을 출력하라
+		// 단, 2월은 28일 까지 있다고 가정, switch문 사용
+
+		// 사용자에게 국어 점수를 입력 받아
+		// 국어점수가 90점 이상이라면 A
+		// 80점이상 90미만 B
+		// 70점이상 80미만 C
+		// 70미만 F
+	}
+
+}

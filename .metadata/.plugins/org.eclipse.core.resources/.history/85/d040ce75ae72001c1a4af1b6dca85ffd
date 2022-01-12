@@ -1,0 +1,21 @@
+package day09;
+
+public class ForEachTest {
+	public static void main(String[] args) {
+		String[] fruits = {"사과", "딸기", "오렌지", "포도"};
+		for(int i = 0; i < fruits.length; i++) {
+			System.out.println(fruits[i]);
+		}
+		System.out.println("----------------------------------------");
+		// fruits라는 배열 속의 요소를 name이라는 변수가 받아온다
+		for(String name : fruits) {
+			System.out.println(name);
+		}
+//		그럼 실행 후에 마지막에 name안에는 "포도"가 있는 건가요?
+		
+		int[] nums = {10,20,30};
+		for(int num : nums) {
+			System.out.println(num);
+		}
+	}
+}

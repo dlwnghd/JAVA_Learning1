@@ -1,0 +1,21 @@
+package day07;
+
+import java.util.Iterator;
+
+public class WhileTest {
+	public static void main(String[] args) {
+		for (i = 0; i < 3; i++ ) {
+			System.out.println("for문 안쪽 문장");
+		}
+		System.out.println("for문 바깥 문장");
+		
+		
+		int i = 0;
+		while (i < 3) {
+			System.out.println("while문 안쪽 문장");
+			i++;
+		}	// 끝나면 무조건 조건식 다시 물어봄
+		System.out.println("while문 바깥 문장");		// while문은 
+	}
+
+}

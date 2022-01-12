@@ -1,0 +1,38 @@
+package day09;
+
+public class ArrayTest {
+	public static void main(String[] args) {
+		int[][] ar = { { 10, 20 }, { 100, 200 }, { 1, 2 } };
+		System.out.println("ar.length : " + ar.length);
+		System.out.println("ar[0].length : " + ar[0].length);
+		System.out.println("ar[1].length : " + ar[1].length);
+		System.out.println("ar[2].length : " + ar[2].length);
+
+		System.out.println("ar[1][0] : " + ar[1][0]);
+		System.out.println("ar[2][1] : " + ar[2][1]);
+
+		System.out.println("{" + ar[1][0] + ", " + ar[1][1] + "}");
+
+		System.out.print("{");		// "{" 출력
+		for (int i = 0; i < 3; i++) {		// int i가 0이고; i가 3보다 미만동안; i++
+			System.out.print("{");		// "{" 출력
+			for (int j = 0; j < 2; j++) {		// int j가 0이고; j가 2보다 미만동안; j++
+				if (j == 1) {		// j가 1일때
+					System.out.print(ar[i][j]);		// "ar[i][j]"출력
+				} else { // j가 1이 아니라면
+					System.out.print(ar[i][j] + ",");		// "ar[i][j],"출력
+				}
+			}
+			if(i == 2) {		// i가 2일때		
+				System.out.print("}");		// "}" 출력
+			}else {			// i가 2가 아니라면	
+				System.out.print("}, ");		// "}, " 출력
+			}
+		}
+		System.out.print("}");
+//		System.out.print(ar[0][0]);
+//		System.out.print(", ");
+//		System.out.print(ar[0][1]);
+//		System.out.print("}");
+	}
+}

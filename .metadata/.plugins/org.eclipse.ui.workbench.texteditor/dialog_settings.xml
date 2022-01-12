@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="Scanner"/>
+		<list key="findhistory">
+			<item value="int[][] ar = { "/>
+			<item value="Scanner"/>
+			<item value="subject"/>
+			<item value="choice"/>
+			<item value="bev ="/>
+			<item value="bev"/>
+			<item value="Random"/>
+			<item value="package day06;"/>
+			<item value="// 오류발생"/>
+			<item value="+"/>
+		</list>
+		<list key="replacehistory">
+			<item value="subjects"/>
+			<item value="// String은 뺄셈 불가능, 오류발생"/>
+			<item value="-"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="768"/>
+		<item key="DIALOG_Y_ORIGIN" value="198"/>
+		<item key="DIALOG_WIDTH" value="369"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

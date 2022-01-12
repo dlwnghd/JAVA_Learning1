@@ -1,0 +1,130 @@
+package tjnoraebang;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Noraebang {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Random r = new Random();
+
+		int choice = 0; // 메인메뉴에서 사용자가 입력한 번호
+		int songCnt = 0; // 현재 부를 수 있는 노래의 수
+		int songTotalCnt = 0; // 전체 부를 수 있는 노래의 수
+
+		String introMsg = "☆★☆★☆★어서오세요 노래방입니다☆★☆★☆★";
+		String mainMenu = "1. 금액입력하기\n" + "2.노래부르기\n" + "3.음료선택하기\n" + "4.내노래실력보기\n" + "5.나가기";
+
+		String bevMenu = "음료를 선택해주세요\n" + "1.사이다\n" + "2. 콜라\n" + "3. 환타\n" + "4. 커피";
+
+		int bev = 0; // 총 마실 수 있는 음료 수
+		int p_bev = 0; // 현재 마실 수 있는 음료 수
+		int bevChoiced = 0; // 고른 음료 수
+
+		int scoreTotal = 0; // 부른 노래들의 총 합
+		int sang = 0; // 부른 노래의 수
+
+		System.out.println(introMsg); // 환영합니다 메세지 띄위기
+
+		while (true) {
+			System.out.println(mainMenu);	// 사용자로 부터 메뉴 선택 유도
+			choice = sc.nextInt();		// 사용자가 입력한 수를 choice라는 변수에 받음
+			if (choice == 5) { // 나가기
+				System.out.println("다음에 또 오세요~");
+				break;		// 시스템 종료
+			} else if (choice == 1) { // 금액입력하기
+				// 사용자에게 금액을 입력받아서
+				// 부를 수 있는 노래 곡수와 잔돈 출력하기
+				System.out.print("금액 입력 >> ");		// 사용자에게 금액 입력 유도
+				int money = sc.nextInt();		// 사용자가 입력한 값은 money라는 변수에 넣음
+
+				// money에 300 미만이 들어있다면 잘못입력했습니다 출력 후 메인 메뉴로 이동하기
+				if (money < 300) {		// 입력한 값이 300미만인 경우
+					System.out.println("잘못입력했습니다\n");		// 사용자에게 잘못입력했다는 메세지 띄움
+					continue;		// 메인 메뉴로 돌아가기 위해 continue 사용
+				}
+				songCnt = songCnt + (money / 300); // 현재 곡 수 계산
+				songTotalCnt = songTotalCnt + (money/300);	// 총 곡 수 계산
+				int rest = money % 300; // 잔돈 선언 및 계산
+				System.out.println("부를 수 있는 노래  : " + songCnt); // 사용자에게 부를 수 있는 노래 수 출력
+				
+				if (rest != 0) { // 잔돈이 0이 아니라면
+					System.out.println("잔돈  " + rest + "원이 반환되었습니다!");		// 잔돈 반환 메세지
+				}
+
+			} else if (choice == 2) { // 노래부르기
+				if (songCnt < 1) {		// 부를 수 있는 곡의 수가 1보다 작다면
+					System.out.println("금액을 먼저 출력해주세요\n");	// 사용자에게 금액을 넣어달라고 요구 메세지 띄움
+					continue;		// 메인 메뉴로 돌아가기 위해 continue 사용
+				}
+				songCnt--;	// 노래를 불렀기에 현재 부를 수 있는 노래 수 차감
+				int score = r.nextInt(100) + 1;		// 노래점수를 1~100중 랜덤한 수를 출력
+
+				System.out.println("당신의 점수는 " + score + "점");		// 노래 점수를 출력
+				if (score == 100) {		// 노래점수가 100점이라면
+					songCnt++;		// 현재 부를 수 있는 노래의 수를 +1해줌
+					System.out.println("와우 가수해도 되겠어요~");	// 칭찬 메세지
+//					System.out.println("부를 수 있는 노래 : " + songCnt); // 반복되기에 마지막으로 이동시킴
+				} else if (score >= 80) {	// 노래점수가 80점 이상이라면
+					System.out.println("휼룡합니다.");	// 칭찬 메세지
+//					System.out.println("부를 수 있는 노래 : " + songCnt);
+				} else if (score >= 50) {		// 노래점수가 50점 이상이라면
+					System.out.println("다음엔 더 좋은 결과가 잇을 거예요~");		// 응원 메세지
+//					System.out.println("부를 수 있는 노래 : " + songCnt);
+				} else {		// 50점 미만의 점수라면
+					if (songCnt >= 1) {	// 현재 부를 수 있는 곡 수가 1이상이라면
+						songCnt--;	// 현재 부를 수 있는 곡 수 -1
+					}
+					System.out.println("노래 한 곡을 차감합니다");		// 차감 메세지
+				}
+				System.out.println("부를 수 있는 노래 : " + songCnt);	// 현재 부를 수 있는 노래 수 출력
+				scoreTotal = scoreTotal + score;		// 부른 노래 점수 합산
+				System.out.println("점수 총합 : " + scoreTotal);	// 현재 부른 점수들의 총합
+				sang++;	// 부른 곡 수 +1
+				System.out.println("부른 곡 수 : " + sang);	// 부른 곡 수 출력
+			} else if (choice == 3) { // 음료선택하기
+				bev = songTotalCnt/3;		// 총 마실 수 있는 음료 수 계산
+				p_bev = bev - bevChoiced;	// 현재 마실 수 있는 음료 수 계산
+				System.out.println(songTotalCnt);
+				System.out.println("bev = "+ bev);
+				System.out.println("bevChoiced = "+bevChoiced);
+				System.out.println("p_bev = " +p_bev);
+				if (p_bev < 1) { // 현재 마실 수 있는 음료수가 1보다 낮다면
+					System.out.println("서비스를 위한 곡수가 " +(3-(songTotalCnt%3)) +"곡 부족합니다\n");	// 서비스를 위한 곡수 부족 출력
+					continue;	// 메인메뉴로 돌아가기 위한 continue 사용
+				} else {		// 총 마실 수 있는 음료 수가 1 이상이라면
+					System.out.println("마실수 있는 음료는 " + p_bev + "잔입니다");	// 현재 마실 수 있는 음료 수 출력
+					System.out.println(bevMenu);		// 사용자로부터 음료 선택 유도
+					int bevNum = sc.nextInt();		// 선택한 음료 번호 출력
+
+					if (bevNum >= 5 || bevNum < 1) {	// 음료 번호를 잘못 입력 했을 경우
+						System.out.println("잘못 입력하였습니다");	// 오류 메세지 출력
+					} else {		// 음료 번호를 잘 입력하였다면
+						bevChoiced++;		// 선택한 음료 수 +1
+						if (bevNum == 1) {		// 1번 선택 시
+							System.out.println("사이다 입니다");	// 사이다 출력
+							System.out.println("bevChoiced = "+bevChoiced);
+						} else if (bevNum == 2) {	// 2번 선택 시
+							System.out.println("콜라 입니다");		// 콜라 출력
+						} else if (bevNum == 3) {	// 3번 선택 시
+							System.out.println("환타 입니다");		// 환타 출력
+						} else if (bevNum == 4) {	// 4번 선택 시
+							System.out.println("커피 입니다");		// 커피 출력
+						}
+					}
+				}
+			} else if (choice == 4) { // 내노래실력보기
+				// 지금까지 부른 노래 점수 총합 / 지금까지 부른 노래 갯수
+				// 소수점 아래 두 자리까지 출력하기
+				if (sang < 1) {		// 현재 부른 노래 수가 1미만이라면
+					System.out.println("부른 노래가 없습니다.");		// 부른 노래가 없다는 메세지 출력
+				} else {		// 부른 노래 수가 1 이상이라면
+					System.out.println("노래의 평균 점수는 " + (scoreTotal / sang) + "입니다");	// 노래 평균 점수 출력
+				}
+			} else { // 사용자가 메인 메뉴에 없는 번호를 입력했을 경우
+				System.out.println("잘못 입력했습니다.");
+			} // if문 닫는 중괄호
+			System.out.println();
+		} // while문 닫는 중괄호
+	}
+}

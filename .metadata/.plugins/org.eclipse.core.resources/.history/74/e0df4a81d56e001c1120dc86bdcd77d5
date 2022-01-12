@@ -1,0 +1,79 @@
+package day06;
+
+public class NestedForTest {
+	public static void main(String[] args) {
+		for (int i = 0; i < 3; i++) {
+
+			for (int j = 0; j < 2; j++) {
+				System.out.println("i : " + i + " j : " + j);
+
+			}
+		}
+		
+		/*
+		 * 	*****
+		 * 	*****
+		 * 	*****
+		 * 	***** 
+		 * 	***** 
+		 * */
+		
+		// 1번째 for문은 열
+		// 2번째 for문을 행으로 생각하면 하기 쉬움
+		
+		for(int j = 0; j <5; j++) {
+			for(int i = 0; i <5; i++) {
+				System.out.print("*");
+			}
+			System.out.println();			
+		}
+		
+		
+		/*
+		 * 	*
+		 * 	**
+		 * 	***
+		 * 	****
+		 * *****
+		 * 
+		 * */
+		
+		for(int i =0; i <5; i++) {
+			for(int j = 0; j < 5; j++) {
+				
+			}
+			System.out.println("*");
+		}
+		
+		char s = '*';
+		for(int j = 0; j <5; j++) {
+			for(int i = 0; i <5; i++) {
+				System.out.print("*");
+			}
+			System.out.println();			
+		}
+		
+		/*
+		 *       *
+		 *      **
+		 *    ***
+		 *  ****
+		 * *****
+		 * */
+		
+		// 구구단 2단부터 9단까지 출력
+		
+		
+		// 내가 낸 문제
+		// 사용자의 입력 값에 따라 별 출력하기
+		// ex) 5
+		/*
+		 * *
+		 * **
+		 * ***
+		 * ****
+		 * *****
+		 * */
+	}
+
+}

@@ -1,0 +1,13 @@
+
+public class IfTest2 {
+	public static void main(String[] args) {
+		int num = 10;
+		
+		if (num < 50) {
+			System.out.println("50보다 작은 값임");
+		}else if (num == 3) {
+			System.out.println("3입니다");
+		}
+	}
+
+}

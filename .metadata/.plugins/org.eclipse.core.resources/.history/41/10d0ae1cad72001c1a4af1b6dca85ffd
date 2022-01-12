@@ -1,0 +1,7 @@
+package day09;
+
+public class ForEachTest {
+	public static void main(String[] args) {
+		String[] fruits = {"»ç°ú", "µþ±â", "¿À·»Áö", "Æ÷µµ"};
+	}
+}

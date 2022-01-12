@@ -1,0 +1,14 @@
+package day09;
+
+public class ForEachTest {
+	public static void main(String[] args) {
+		String[] fruits = {"»ç°ú", "µþ±â", "¿À·»Áö", "Æ÷µµ"};
+		for(int i = 0; i < fruits.length; i++) {
+			System.out.println(fruits[i]);
+		}
+		System.out.println("----------------------------------------");
+		for(String name : fruits) {
+			System.out.println(name);
+		}
+	}
+}

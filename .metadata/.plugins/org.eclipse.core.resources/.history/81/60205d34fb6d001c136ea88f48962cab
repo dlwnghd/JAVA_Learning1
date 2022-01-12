@@ -1,0 +1,13 @@
+
+public class IfTest {
+	public static void main(String[] args) {
+		if(true) {
+			System.out.println("문장1");
+			if(true) {
+				System.out.println("문장3");
+			}
+			System.out.println("문장4");
+		}
+		System.out.println("문장2");
+	}
+}
