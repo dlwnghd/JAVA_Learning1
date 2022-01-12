@@ -1,0 +1,93 @@
+package day10;
+
+import java.util.Scanner;
+
+public class MethodTask {
+	
+	public static void printName(String name, int cnt) {
+		for (int i = 0; i < cnt; i++) {
+			System.out.println(name);
+		}		
+	}
+	
+	public static boolean isCapital(char ch) {
+		if(ch >= 'a' && ch <= 'z') {
+			return false;	// 소문자 + 메소드문 탈출
+		}
+		return true;	// 대문자	+ 메소드문 탈출
+	}
+	
+	public static char changeAlphabet(char ch) {
+		if(MethodTask.isCapital(ch)) {
+			 return(char)(ch + 32);
+		}else {
+			return (char)(ch - 32);
+		}
+	}
+	
+	public static void printAr(int[] array) {
+		System.out.print("{");
+		for (int i = 0; i < array.length; i++) {
+			if (i == array.length - 1) {
+				System.out.print(array[i]);
+				break;
+			}
+			System.out.print(array[i] + ", ");
+		}
+		System.out.println("}");
+	}
+	
+	public static void main(String[] args) {
+		// 1. 사용자에게 이름과 반복 횟수를 입력 받아서
+		// 사용자가 입력한 이름을 해당 반복 횟수만큼 출력하는 메소드
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("이름 입력 >> ");
+//		String name = sc.next();		
+//		System.out.print("반복 횟수 >> ");
+//		int cnt = sc.nextInt();
+//		
+//		MethodTask.printName(name, cnt);
+		
+		// 2. target이라는 변수에 들어있는 값이 대문자인지 소문자인지 판별하는 메소드
+		// 만들기 (단, target에는 소문자 혹은 대문자 영어 문자만 들어갈 수 있다)
+		char target = 'a'; // 다른 문자가 들어가면 작동 안되게 만들기
+		
+		// 실무에서 사용자가 원하는 문자를 출력하고 싶다고 하는 경우가 생길 수도 있다
+		// 이 때는 메소드 안보다는 main에서 출력할 수 있도록 하는 것이 좋다.
+		if (MethodTask.isCapital(target)) {
+			System.out.println("축하합니다!! 대문자!!!");
+		}else {
+			System.out.println("ㅜㅜ 소문자");
+		}
+		
+		// 3. target이라는 변수에 들어있는 값이 대문자라면 소문자로,
+		// 소문자라면 대문자로 바꾸어 출력하는 메소드 만들기
+		// (단, target에는 소문자 혹은 대문자 영어 문자만 들어갈 수 있다)
+		char res = MethodTask.changeAlphabet(target);
+		System.out.println("바뀐 결과: " + target + "-->" + res);
+		
+		
+		
+		
+		
+		// 4. 배열의 요소를 출력해주는 메소드 만들기
+		// {10, 20, 30}
+		// {{10, 20}, {30, 40}, {50, 60}}
+		// {{10, 20}, {30, 40}, {50, 60}, {70, 80}}
+		int[] ar = {10, 20, 30};
+		int[][] ar2 = {{10, 20}, {30, 40}, {50, 60}};
+		int[][] ar3 = {{10, 20}, {30, 40}, {50, 60}, {70, 80}};
+		MethodTask.printAr(ar);
+		
+	}
+
+	// 문제 해결을 위해 인터넷에서 퍼온 것 하지만 아쉽게도 도움이 되지는 못했다 아마 내가 아직 코드에 대한 이해도가 부족하기 때문일 것이다.
+//	public static void main(String[] args){
+//		int[][] lengthTest1 = new int[7][3];
+//		System.out.println( lengthTest1.length ); // 7 
+//		String lengthTest2 = "lengthSizeTest"; 
+//		System.out.println( lengthTest2.length() ); // 14 
+//		ArrayList<Object> sizeTest = new ArrayList<Object>();
+//		System.out.println( sizeTest .size() ); // 0 }
+//	}
+}

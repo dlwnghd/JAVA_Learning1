@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class JAVA_01_11 {
 	public static void name() {
-		// 1차 풀이
 		Scanner sc = new Scanner (System.in);
+		// 1차 풀이
 		System.out.print("이름 입력 >> ");
 		String name = sc.next();
+		
 		System.out.print("반복 횟수 입력 >> ");
 		int cnt = sc.nextInt();
+		
 		for (int i = 0; i < cnt; i++) {
 			System.out.println(name);
 		}
@@ -83,12 +85,12 @@ public class JAVA_01_11 {
 		// 만들기	(단, target에는 소문자 혹은 대문자 영어 문자만 들어갈 수 있다)
 		char target = 'a';	// 다른 문자가 들어가면 작동 안되게 만들기
 		// 65~90 || 97~122범위가 알파벳 아스키코드 번호
-		JAVA_01_11.Alphabet(target);
+//		JAVA_01_11.Alphabet(target);
 		
 		// 3. target이라는 변수에 들어있는 값이 대문자라면 소문자로,
 		// 소문자라면 대문자로 바꾸어 출력하는 메소드 만들기
 		// (단, target에는 소문자 혹은 대문자 영어 문자만 들어갈 수 있다)
-		JAVA_01_11.Alpha_Change(target);
+//		JAVA_01_11.Alpha_Change(target);
 		
 		// 4. 배열의 요소를 출력해주는 메소드 만들기
 		// {10, 20, 30}
@@ -104,10 +106,10 @@ public class JAVA_01_11 {
 //		System.out.println(ar3.length);
 		
 		
-		JAVA_01_11.Arrary_Out1(ar1);
-		System.out.println();
-		JAVA_01_11.Arrary_Out2(ar2);
-		System.out.println();
-		JAVA_01_11.Arrary_Out2(ar3);
+//		JAVA_01_11.Arrary_Out1(ar1);
+//		System.out.println();
+//		JAVA_01_11.Arrary_Out2(ar2);
+//		System.out.println();
+//		JAVA_01_11.Arrary_Out2(ar3);
 	}
 }
