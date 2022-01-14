@@ -38,15 +38,15 @@ public class ClassTest {
 		ClassTest.show(park);		// ClassTest클래스에서 show메소드에 (park) 입력
 		ClassTest.show(kim);		// ClassTest클래스에서 show메소드에 (kim) 입력
 		
-//		System.out.println("--- 학생정보---");		// "--- 학생정보---" 출력
-//		System.out.println("이름 : "+kim.name);	// kim(객체) 안에있는 name 출력
-//		System.out.println("국어 : "+kim.kor);		// kim(객체) 안에있는 kor 출력
-//		System.out.println("영어 : "+kim.eng);		// kim(객체) 안에있는 eng 출력
-//		
-//		System.out.println("--- 학생정보---");			// "--- 학생정보---" 출력
-//		System.out.println("이름 : "+park.name);	// park(객체) 안에있는 name 출력
-//		System.out.println("국어 : "+park.kor);		// park(객체) 안에있는 kor 출력
-//		System.out.println("영어 : "+park.eng);		// park(객체) 안에있는 eng 출력
+		System.out.println("--- 학생정보---");		// "--- 학생정보---" 출력
+		System.out.println("이름 : "+kim.name);	// kim(객체) 안에있는 name 출력
+		System.out.println("국어 : "+kim.kor);		// kim(객체) 안에있는 kor 출력
+		System.out.println("영어 : "+kim.eng);		// kim(객체) 안에있는 eng 출력
+		
+		System.out.println("--- 학생정보---");			// "--- 학생정보---" 출력
+		System.out.println("이름 : "+park.name);	// park(객체) 안에있는 name 출력
+		System.out.println("국어 : "+park.kor);		// park(객체) 안에있는 kor 출력
+		System.out.println("영어 : "+park.eng);		// park(객체) 안에있는 eng 출력
 	}
 }
 
@@ -64,19 +64,3 @@ class Student{	// 클래스를 만들었다 == 우리만의 자료형(type)을 만들었다,
 		System.out.println("영어 : " + this.eng);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
